@@ -4,9 +4,9 @@
     <div class="large-12 columns collapse main" role="main">
     	
     	<?php if ( have_posts() ) : ?>
-			<header class="archive-header">
-				<h2 class="archive-title"><?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); echo $term->name; ?></h2>
-			</header><!-- .archive-header -->
+			<header class="taxonomy-header">
+				<h2 class="taxonomy-title"><?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); echo $term->name; ?></h2>
+			</header><!-- .taxonomy-header -->
 			<div class="description">
 				<?php echo term_description(); ?>
 			</div>
