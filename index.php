@@ -2,11 +2,12 @@
 
     <!-- Main Content -->
     <div class="large-9 columns" role="main">
-
+    	hej
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<h2><?php the_title(); ?></h2>
+				<?php the_content(); ?>
 			<?php endwhile; ?>
 
 		<?php else : ?>
