@@ -159,4 +159,39 @@ function display_element( $element, &$children_elements, $max_depth, $depth=0, $
 	}
 }
 
+/**
+ * Register Sidebars
+ */
+
+if ( ! function_exists( 'foundation_widgets' ) ) :
+
+function foundation_widgets() {
+
+	// Sidebar Right
+	register_sidebar( array(
+			'id' => 'sidebar_right',
+			'name' => __( 'Sidebar Right', 'foundation' ),
+			'description' => __( 'This sidebar is located on the right-hand side of each page.', 'foundation' ),
+			'before_widget' => '<div>',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+
+	// Sidebar Footer Column One
+	register_sidebar( array(
+			'id' => 'sidebar_footer',
+			'name' => __( 'Footer', 'foundation' ),
+			'description' => __( 'This widget area is located in column one of your theme footer.', 'foundation' ),
+			'before_widget' => '<div class="large-3 columns">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5>',
+			'after_title' => '</h5>',
+		) );
+}
+
+add_action( 'widgets_init', 'foundation_widgets' );
+
+endif;
+
 ?>
