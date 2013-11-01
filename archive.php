@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
     <!-- Main Content -->
-    <div class="large-12 columns collapse main" role="main">
+    <div class="large-9 columns collapse main" role="main">
     	
     	<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
-				<h1 class="archive-title"><?php
+				<h3 class="archive-title"><?php
 					if ( is_day() ) :
 						printf( __( 'Daily Archives: %s', 'foundation' ), get_the_date() );
 					elseif ( is_month() ) :
@@ -15,7 +15,7 @@
 					else :
 						_e( 'Archives', 'foundation' );
 					endif;
-				?></h1>
+				?></h3>
 			</header><!-- .archive-header -->
 			<div class="description">
 				<?php echo term_description(); ?>
@@ -30,7 +30,7 @@
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 						<?php 
 						if ( has_post_thumbnail() ) {
-							 the_post_thumbnail();
+							 the_post_thumbnail('thumbnail');
 						}
 						else {
 							echo 'No thumbnail found';

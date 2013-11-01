@@ -1,8 +1,11 @@
 </div><!-- /row -->
 <footer class="row">
-	<div class"large-12 columns">
+	<?php if ( dynamic_sidebar('Footer') ) : elseif( current_user_can( 'edit_theme_options' ) ) : ?>
 
-	</div>
+	<h5><?php _e( 'No widgets found.', 'foundaton' ); ?></h5>
+	<p><?php printf( __( 'Add some %s now...', 'foundation' ), '<a href=" '. get_admin_url( '', 'widgets.php' ) .' ">widgets</a>' ); ?></p>
+
+<?php endif; ?>
 </footer>
 <?php wp_footer(); ?>
 </body>
