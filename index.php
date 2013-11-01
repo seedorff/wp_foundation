@@ -2,7 +2,7 @@
 
     <!-- Main Content -->
     <div class="large-9 columns" role="main">
-    	hej
+    	
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
