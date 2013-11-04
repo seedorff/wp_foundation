@@ -8,7 +8,7 @@
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width" />
 
-<title><?php wp_title(); ?></title>
+<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
 
 <?php wp_head(); ?>
 </head>
