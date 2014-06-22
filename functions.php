@@ -176,4 +176,48 @@ add_action( 'widgets_init', 'foundation_widgets' );
 
 endif;
 
+/*
+ Register Taxonomies [remove comments to use]
+
+
+function cases_tax_init() {
+	register_taxonomy(
+		'cases_tax',
+		'case',
+		array(
+			'label' => __( 'Case categories' ),
+			'rewrite' => array( 'slug' => 'cases' ),
+			'hierarchical' => true
+		)
+	);
+}
+add_action( 'init', 'cases_tax_init' );
+
+*/
+
+/*
+Register post types [remove comments to use]
+
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type('case', array(
+        'labels' => array(
+            'name' => 'Cases',
+            'singular_name' => 'Case',
+            'add_new' => 'New Case',
+            'edit_item' => 'Edit case',
+            'new_item' => 'New case',
+            'view_item' => 'View case',
+            'search_items' => 'Search cases',
+            'not_found' => 'No cases found',
+            'not_found_in_trash' => 'No cases found in trash'
+        ),
+        'public' => true,
+        'hierarchical' => true,
+        'supports' => array( 'title', 'editor', 'thumbnail')
+    ));
+}
+ */
+
 ?>
