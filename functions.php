@@ -45,11 +45,14 @@ function foundation_assets() {
 
 		// Load JavaScripts
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/core/foundation/js/foundation.min.js', null, '5.3.0', true );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/core/slick/slick.min.js', null, '1.3.7', true );
 		if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
 		// Load Stylesheets
 		wp_enqueue_style( 'normalize', get_template_directory_uri().'/core/foundation/css/normalize.css' );
 		wp_enqueue_style( 'foundation', get_template_directory_uri().'/core/foundation/css/foundation.min.css' );
+		wp_enqueue_style( 'slick', get_template_directory_uri().'/core/slick/slick.css' );
+		wp_enqueue_style( 'custom', get_template_directory_uri().'/css/style.css' );
 
 		// Load Google Fonts API
 		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300' );
@@ -176,9 +179,6 @@ add_action( 'widgets_init', 'foundation_widgets' );
 
 endif;
 
-/*
- Register Taxonomies [remove comments to use]
-
 
 function cases_tax_init() {
 	register_taxonomy(
@@ -192,11 +192,6 @@ function cases_tax_init() {
 	);
 }
 add_action( 'init', 'cases_tax_init' );
-
-*/
-
-/*
-Register post types [remove comments to use]
 
 
 add_action( 'init', 'create_post_type' );
@@ -217,7 +212,22 @@ function create_post_type() {
         'hierarchical' => true,
         'supports' => array( 'title', 'editor', 'thumbnail')
     ));
+    register_post_type('slider', array(
+        'labels' => array(
+            'name' => 'Slider',
+            'singular_name' => 'Slide',
+            'add_new' => 'New slide',
+            'edit_item' => 'Edit slide',
+            'new_item' => 'New slide',
+            'view_item' => 'View slide',
+            'search_items' => 'Search slides',
+            'not_found' => 'No slides found',
+            'not_found_in_trash' => 'No slides found in trash'
+        ),
+        'public' => true,
+        'hierarchical' => true,
+        'supports' => array( 'title', 'thumbnail')
+    ));
 }
- */
 
 ?>
